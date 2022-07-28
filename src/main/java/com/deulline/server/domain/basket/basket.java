@@ -20,5 +20,6 @@ public class basket {
     private Long basket_id;
     private Long product_id;
     private int price;
+
     private Long user_id;
 }
