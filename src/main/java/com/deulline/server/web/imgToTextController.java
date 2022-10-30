@@ -28,7 +28,12 @@ public class imgToTextController {
     @GetMapping("extra/{productId}")
     public ResponseEntity getExtraOcr(@PathVariable(value = "productId") Long productId) {
         product info = productService.getExtraById(productId);
-        imgToTextDto.extraInfoDto extraInfoDto = new imgToTextDto.extraInfoDto(info.getProduct_id(), info.getProduct_data());
+
+        //문자열 자르기
+        String str = info.getProduct_data();
+        str = str.substring(0, 200);
+
+        imgToTextDto.extraInfoDto extraInfoDto = new imgToTextDto.extraInfoDto(info.getProduct_id(), str);
 
         return new ResponseEntity(DefaultRes.res(StatusCode.OK, ResponseMessage.SUCCESS, extraInfoDto), HttpStatus.OK);
     }
