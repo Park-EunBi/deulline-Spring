@@ -1,5 +1,4 @@
-package com.deulline.server.domain.basket;
-
+package com.deulline.server.domain.additional;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,12 +13,13 @@ import javax.persistence.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class basket {
+public class additional {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "additional_id", unique = true)
+    private Long id;
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long basket_id;
     private Long productId;
-    private int price;
 
-    private Long userId;
+    private String additionalData;
 }

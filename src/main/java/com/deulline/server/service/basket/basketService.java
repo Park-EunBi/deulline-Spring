@@ -35,11 +35,11 @@ public class basketService {
 
         //장바구니 생성
         basket basket = new basket();
-        basket.setProduct_id(productId);
+        basket.setProductId(productId);
         basket.setPrice(product.getPrice());
 
         //회원가입 기능 없음 -> null 값으로 채우기
-        basket.setUser_id(0L);
+        basket.setUserId(0L);
         basket save = basketRepository.save(basket);
 
         return save.getBasket_id();

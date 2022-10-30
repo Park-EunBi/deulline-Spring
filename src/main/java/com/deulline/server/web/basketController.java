@@ -24,7 +24,7 @@ public class basketController {
     @GetMapping("basket/{userId}")
     public basketDto.basketInfoDto getBasketInfo(@PathVariable(value = "userId") Long userId){
         basket info = basketService.getBasketById(userId);
-        basketDto.basketInfoDto basketInfoDto = new basketDto.basketInfoDto(info.getBasket_id(), info.getProduct_id(), info.getPrice());
+        basketDto.basketInfoDto basketInfoDto = new basketDto.basketInfoDto(info.getBasket_id(), info.getProductId(), info.getPrice());
 
         return basketInfoDto;
 
