@@ -1,6 +1,5 @@
 package com.deulline.server.service.product;
 
-import com.deulline.server.domain.imgToText.imgToText;
 import com.deulline.server.domain.product.product;
 import com.deulline.server.domain.product.productRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,8 +16,8 @@ public class productService {
      * 상품의 기초 정보 조회
      */
 
-    public product getProductById(Long productId) {
-        product info = productRepository.findById(productId).get();
+    public product getProductById(String category) {
+        product info = productRepository.findById(category).get();
 
         System.out.println(info);
 

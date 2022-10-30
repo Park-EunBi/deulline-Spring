@@ -21,10 +21,10 @@ public class productController {
      * 상품의 기초 정보 조회
      */
 
-    @GetMapping("product/{productId}")
-    public ResponseEntity getProductInfo(@PathVariable(value = "productId") Long productId){
+    @GetMapping("product/{category}")
+    public ResponseEntity getProductInfo(@PathVariable(value = "category") String category){
 
-        product info = productService.getProductById(productId);
+        product info = productService.getProductById(category);
         productDto.productInfoDto productInfoDto = new productDto.productInfoDto(info.getProduct_id(), info.getProduct_name(), info.getPrice(), info.getReview_count(), info.getRanking());
 
         return new ResponseEntity(DefaultRes.res(StatusCode.OK, ResponseMessage.SUCCESS, productInfoDto), HttpStatus.OK);
