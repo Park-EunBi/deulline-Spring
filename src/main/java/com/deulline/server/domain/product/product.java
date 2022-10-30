@@ -25,4 +25,5 @@ public class product {
     private int review_count;
     private Date update_at;
     private int ranking;
+    private String product_data;
 }

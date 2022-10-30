@@ -1,5 +1,6 @@
 package com.deulline.server.service.product;
 
+import com.deulline.server.domain.imgToText.imgToText;
 import com.deulline.server.domain.product.product;
 import com.deulline.server.domain.product.productRepository;
 import lombok.RequiredArgsConstructor;
@@ -22,5 +23,9 @@ public class productService {
         System.out.println(info);
 
         return info;
+    }
+
+    public product getExtraById(Long productId) {
+        return productRepository.findExtraById(productId).get();
     }
 }
